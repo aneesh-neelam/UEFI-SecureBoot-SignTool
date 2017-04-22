@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+KERNEL=$(uname -s)
+KDIR=/lib/modules/"$KERNEL"
+
+while read in
+do
+  KDIR/build/scripts/sign-file sha256 "$PRIVATE_KEY_FILE" "$PUBLIC_KEY_FILE" $KDIR/"$in"
+done < ./data/CruzIDs.txt
