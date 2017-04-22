@@ -1,0 +1,2 @@
+PRIVATE_KEY_FILE="/home/aneeshneelam/.uefi-sb/sb.priv"
+PUBLIC_KEY_FILE="/home/aneeshneelam/.uefi-sb/sb_pub.der"
