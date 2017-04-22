@@ -1,11 +1,11 @@
 # UEFI Secure Boot sign tool
 
-The Linux kernel on Ubuntu (>=16.04.x), Fedora (>=18) won't load unsigned external kernel modules if Secure Boot is enabled on UEFI systems.
+The default signed Linux kernel on Ubuntu (>=16.04.x), Fedora (>=18) and perhaps on other distributions as well, won't load unsigned external kernel modules if Secure Boot is enabled on UEFI systems.
 Hence, any external kernel modules like the Nvidia proprietary kernel driver, VirtualBox kernel driver etc. won't work.
 
 External kernel modules must be signed for UEFI Secure Boot using a Machine Owner Key (MOK).
 
-You can use UEFI Secure Boot Sign Tool to sign kernel modules.
+You can use the UEFI Secure Boot Sign Tool to sign kernel modules.
 This is useful if you can't or don't wish to disable Secure Boot on your UEFI-enabled system.
 
 Here, we use a X.509 Key Pair as the UEFI Secure Boot Machine Owner Key.
@@ -14,7 +14,7 @@ Here, we use a X.509 Key Pair as the UEFI Secure Boot Machine Owner Key.
 
 You'll have to run the Signing Tool every time a kernel module is rebuilt or when a new kernel is installed.
 
-Maybe in the future this tool could hook into [DKMS](https://github.com/dell/dkms) whenever a new kernel or kernel module is installed to automate this process completely.
+Maybe in the future this tool could hook into [DKMS](https://github.com/dell/dkms) whenever a new kernel or kernel module is installed to completely automate this process.
 
 ###### Generating a Public and Private X.509 Key Pair:
 
