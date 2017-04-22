@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-KERNEL=$(uname -s)
+source etc/sb-signtool/mok.rc
+
+KERNEL=$(uname -r)
 KDIR=/lib/modules/"$KERNEL"
 
 while read in
 do
-  KDIR/build/scripts/sign-file sha256 "$PRIVATE_KEY_FILE" "$PUBLIC_KEY_FILE" $KDIR/"$in"
-done < ./data/CruzIDs.txt
+  $KDIR/build/scripts/sign-file sha256 $PRIVATE_KEY_FILE $PUBLIC_KEY_FILE $KDIR/$in
+done < /etc/sb-signtool/modules.conf
