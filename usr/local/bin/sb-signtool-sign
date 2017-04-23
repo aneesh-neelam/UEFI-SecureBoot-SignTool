@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source etc/sb-signtool/mok.rc
+source /etc/sb-signtool/mok.rc
 
 KERNEL=$(uname -r)
 KDIR=/lib/modules/"$KERNEL"
