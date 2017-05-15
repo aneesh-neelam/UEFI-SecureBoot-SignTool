@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source /etc/sb-signtool/mok.rc
+source /usr/local/etc/sb-signtool/mok.rc
 
 KERNEL=$(uname -r)
 KDIR=/lib/modules/"$KERNEL"
@@ -8,4 +8,4 @@ KDIR=/lib/modules/"$KERNEL"
 while read in
 do
   $KDIR/build/scripts/sign-file sha256 $PRIVATE_KEY_FILE $PUBLIC_KEY_FILE $KDIR/$in
-done < /etc/sb-signtool/modules.conf
+done < /usr/local/etc/sb-signtool/modules.conf

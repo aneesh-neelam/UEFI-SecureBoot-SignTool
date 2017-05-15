@@ -28,8 +28,8 @@ Maybe in the future this tool could hook into [DKMS](https://github.com/dell/dkm
 
 You can check out example config files in the [examples directory](https://github.com/aneesh-neelam/uefi-sb-signtool/tree/master/examples).
 
-    /etc/sb-signtool/mok.rc
-    /etc/sb-signtool/modules.conf
+    /usr/local/etc/sb-signtool/mok.rc
+    /usr/local/etc/sb-signtool/modules.conf
 
 ###### Run the UEFI Secure Boot Signing Tool:
 
