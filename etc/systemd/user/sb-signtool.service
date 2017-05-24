@@ -1,0 +1,12 @@
+[Unit]
+Description=Sign kernel modules on startup
+After=akmods.service dkms.service vboxdrv.service
+Before=systemd-modules-load.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/sb-signtool-sign
+
+[Install]
+WantedBy=multi-user.target
