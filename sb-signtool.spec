@@ -8,33 +8,35 @@ Group: System Environment/Kernel
 Summary: Script to sign kernel modules and systemd service to run during boot.
 
 URL: https://github.com/aneesh-neelam/UEFI-SecureBoot-SignTool
-License: GPLv2
-Source0: %{name}-%{version}.tar.gz
+License: GPLv2+
+Source0: https://github.com/aneesh-neelam/UEFI-SecureBoot-SignTool/releases/download/%{version}/%{name}-%{version}.tar.gz
 
-# BuildRequires:
-# Requires:
+Requires: kernel-devel
+Requires: openssl
+Requires: mokutil
+Requires: bash
+
+BuildArch: noarch
 
 %description
-%{summary}
+UEFI Secure Boot Sign Tool can be used to sign kernel modules.
+Essentially, it is a wrapper around the sign-file binary in the kernel sources.
+The systemd service can be enabled to automatically sign specific kernel modules with user's own once setup is complete.
 
 %prep
-%autosetup
-
+%setup -q
 
 %build
-%configure
-%make_build
-
 
 %install
-rm -rf $RPM_BUILD_ROOT
-%make_install
+mkdir -p %{buildroot}/%{_bindir}
+install -m 0755 %{name}-sign %{buildroot}/%{_bindir}/%{name}-sign
 
 
 %files
 %license LICENSE
-#%doc README.md
-
+%doc README.md
+%{_bindir}/%{name}-sign
 
 
 %changelog

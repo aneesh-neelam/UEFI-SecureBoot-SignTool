@@ -19,7 +19,10 @@ Fedora Dependencies:
 * openssl
 * Any text editor
 
-Extract/Install the files in their respective locations. See
+Extract/Install the files in their respective locations. Download installation script from the [releases page](https://github.com/aneesh-neelam/UEFI-SecureBoot-SignTool/releases) and run install.sh as root.
+
+    # ./install.sh
+
 
 ###### Generating a Public and Private X.509 Key Pair:
 
