@@ -15,4 +15,5 @@ install -m 644 etc/sb-signtool/mok.rc sb-signtool-$VERSION/etc/sb-signtool/
 install -m 644 usr/share/doc/sb-signtool/example_modules.conf sb-signtool-$VERSION/usr/share/doc/sb-signtool/
 
 tar -zcvf sb-signtool-1.0.tar.gz sb-signtool-1.0/
+
 rm -r sb-signtool-$VERSION
