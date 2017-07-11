@@ -1,3 +1,6 @@
+# WARNING
+# This spec file is still in progress, rpmbuild for this may not work correctly or at all at this time
+
 Name:    sb-signtool
 Version: 1.0
 Release: 1%{?dist}
