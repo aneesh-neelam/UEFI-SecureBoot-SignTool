@@ -39,7 +39,7 @@ Must edit the following file before running script:
 
 You can check out an example file in the [documentation](https://github.com/aneesh-neelam/UEFI-SecureBoot-SignTool/blob/master/usr/share/doc/sb-signtool/example_modules.conf).
 
-### Manual execution and Enabling systemd service
+### Usage
 
 Must run the Signing Tool every time a kernel module is rebuilt or when a new kernel is installed.
 Or enable the systemd service to do that on boot.
