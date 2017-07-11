@@ -1,0 +1,2 @@
+PRIVATE_KEY_FILE="/etc/sb-signtool/keyfiles/sb.priv"
+PUBLIC_KEY_FILE="/etc/sb-signtool/keyfiles/sb_pub.der"
