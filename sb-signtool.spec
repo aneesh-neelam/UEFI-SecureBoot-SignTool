@@ -1,30 +1,39 @@
-%define        __spec_install_post %{nil}
-%define          debug_package %{nil}
-%define        __os_install_post %{_dbpath}/brp-compress
-
 Name:    sb-signtool
 Version: 1.0
-Release: 1.0%{?dist}
+Release: 1%{?dist}
 Group: System Environment/Kernel
 Summary: Script to sign kernel modules and systemd service to run during boot.
+
 URL: https://github.com/aneesh-neelam/UEFI-SecureBoot-SignTool
-License: BSD
+License: GPLv2
 Source0: %{name}-%{version}.tar.gz
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+# BuildRequires:
+# Requires:
 
 %description
 %{summary}
 
 %prep
-%setup -q
+%autosetup
+
 
 %build
-# Empty section.
+%configure
+%make_build
+
 
 %install
-rm -rf %{buildroot}
-mkdir -p  %{buildroot}
+rm -rf $RPM_BUILD_ROOT
+%make_install
 
-# in builddir
-cp -a * %{buildroot}
+
+%files
+%license LICENSE
+#%doc README.md
+
+
+
+%changelog
+* Tue Jul 11 2017 Aneesh Neelam <neelam.aneesh@gmail.com>
+- Initial version of the package
